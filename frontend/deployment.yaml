@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend-app
-          image: mkreddi17/frontend:v3
+          image: mkreddi17/frontend:2
           ports:
             - containerPort: 80
           env:
