@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend-app
+          image: mkreddi17/backend:v8
+          resources:
+            limits:
+              cpu: 500m
+              memory: 2Gi
+            requests:
+              cpu: 300m
+              memory: 1Gi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MYSQL_HOST
+              value: "http://mysql:3306/"
+            - name: MYSQL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: myapp-db-secret
+                  key: MYSQL_USERNAME
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: MYSQL_PASSWORD
+                  name: myapp-db-secret
+            - name: MYSQL_DB
+              valueFrom:
+                secretKeyRef:
+                  key: MYSQL_DB
+                  name: myapp-db-secret
