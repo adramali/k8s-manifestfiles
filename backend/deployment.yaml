@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-app
-          image: adramalli/backend:14
+          image: adramalli/backend:16
           resources:
             limits:
               cpu: 500m
