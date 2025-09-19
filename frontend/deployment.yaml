@@ -12,6 +12,8 @@ spec:
       labels:
         app: frontend
     spec:
+      imagePullSecrets:
+        - name: docker-registry
       containers:
         - name: frontend-app
           image: adramalli/frontend:3

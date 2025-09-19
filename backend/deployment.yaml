@@ -12,6 +12,8 @@ spec:
       labels:
         app: backend
     spec:
+      imagePullSecrets:
+        - name: docker-registry
       containers:
         - name: backend-app
           image: adramalli/backend:16
