@@ -16,7 +16,7 @@ spec:
         - name: docker-registry
       containers:
         - name: backend-app
-          image: adramalli/backend:16
+          image: adramalli/backend:17
           resources:
             limits:
               cpu: 500m
