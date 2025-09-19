@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql:5.7
+          image: mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: "Arjun@1720"  # Set a strong password for MySQL root user
