@@ -5,7 +5,7 @@ metadata:
   namespace: dev
 spec:
   rules:
-  - host: www.ecommerce.com 
+  - host: frontend.local
     http:
       paths:
       - path: /
