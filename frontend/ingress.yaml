@@ -3,15 +3,20 @@ kind: Ingress
 metadata:
   name: frontend-ingress
   namespace: dev
+  labels:
+    app: frontend
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
   - host: frontend.local
     http:
-      paths:
-      - path: /*
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: frontend-svc
-            port:
-              number: 80
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-svc
+                port:
+                  number: 80
