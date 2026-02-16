@@ -17,7 +17,7 @@ spec:
         - name: docker-registry
       containers:
         - name: frontend-app
-          image: adramalli/frontend:23
+          image: adramalli/frontend:25
           resources:
             limits:
               cpu: 200m
