@@ -30,7 +30,7 @@ spec:
           env:
             - name: MYSQL_HOST
               value: "http://mysql:3306/"
-            - name: MYSQL_USERNAME
+            - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
                   name: myapp-db-secret
